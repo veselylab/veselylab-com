@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  
+  
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://veselylab.com/" />
+
+  <!-- Open Graph -->
+  
+  
+  
+  <meta property="og:url" content="https://veselylab.com/" />
+
+  <!-- Twitter -->
+  
+  
+  
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What does VeselyLAB build?","acceptedAnswer":{"@type":"Answer","text":"VeselyLAB designs smart physical products and phygital systems that combine AI, NFC, digital identity, custom hardware, and ownership infrastructure."}},
+      {"@type":"Question","name":"Is this just 3D printing?","acceptedAnswer":{"@type":"Answer","text":"No. 3D printing is only one manufacturing method. The real product is the intelligence layer attached to the object."}},
+      {"@type":"Question","name":"What kinds of products can you create?","acceptedAnswer":{"@type":"Answer","text":"Examples include NFC-enabled objects, authenticated products, connected packaging, custom hardware, membership objects, and AI-linked devices."}},
+      {"@type":"Question","name":"Can products be linked to blockchain or crypto records?","acceptedAnswer":{"@type":"Answer","text":"Yes. VeselyLAB can connect products to on-chain or crypto-backed provenance, ownership, and verification systems where useful."}},
+      {"@type":"Question","name":"Do you work on prototypes or production systems?","acceptedAnswer":{"@type":"Answer","text":"Both. Projects can start as prototypes and evolve into deployable product systems."}},
+      {"@type":"Question","name":"Can these products connect to AI agents?","acceptedAnswer":{"@type":"Answer","text":"Yes. Physical objects can trigger or interact with AI workflows, support systems, identity checks, and automation layers."}},
+      {"@type":"Question","name":"Who is this for?","acceptedAnswer":{"@type":"Answer","text":"Brands, operators, creators, and companies building connected physical products, intelligent packaging, authenticated goods, or phygital experiences."}},
+      {"@type":"Question","name":"How is VeselyLAB related to vesely.ai?","acceptedAnswer":{"@type":"Answer","text":"vesely.ai builds the digital workforce. VeselyLAB connects intelligence to the physical world."}}
+    ]
+  }
+  </script>
+
+  
+
+<!-- SEO Meta Tags -->
+<title>VeselyLAB — Where AI Meets the Physical World</title>
+<meta name="description" content="VeselyLAB designs smart physical products powered by AI, NFC, and on-chain identity. Build connected objects, custom hardware, and phygital systems that bridge software and reality." />
+<meta property="og:title" content="VeselyLAB — Where AI Meets the Physical World" />
+<meta property="og:description" content="VeselyLAB designs smart physical products powered by AI, NFC, and on-chain identity. Build connected objects, custom hardware, and phygital systems that bridge software and reality." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VeselyLAB — Where AI Meets the Physical World" />
+<meta name="twitter:description" content="VeselyLAB designs smart physical products powered by AI, NFC, and on-chain identity. Build connected objects, custom hardware, and phygital systems that bridge software and reality." />
+<!-- End SEO Meta Tags -->
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://app.vesely.ai/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=3358');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='E3ZwrhGrBR';
+  var apiBase='https://app.vesely.ai';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">Thank you for purchasing '+pName.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'.</p><button onclick="document.getElementById(\'payment-success-overlay\').remove();window.history.replaceState({},\'\',window.location.pathname);" style="padding:12px 32px;font-size:16px;font-weight:600;background:#16a34a;color:white;border:none;border-radius:8px;cursor:pointer;">Continue</button></div>';
+      document.body.appendChild(overlay);
+    }
+  });
+})();
+</script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">veselyLAB<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#features">Capabilities</a></li>
+      <li><a href="#usecases">Use Cases</a></li>
+      <li><a href="#tech">Technology</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cta">Contact</a></li>
+    </ul>
+    <a href="#cta" class="btn-primary">Start a Project</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="eyebrow">Physical Intelligence</span>
+        <h1>Where AI Meets<br>the Physical World</h1>
+        <span class="hero-accent-line">Where AI touches atoms.</span>
+        <p class="hero-body">Design smart physical products powered by AI, NFC, and on-chain identity. Build connected objects, custom hardware, and phygital systems that bridge software and reality.</p>
+        <div class="hero-ctas">
+          <a href="#cta" class="btn-primary">Start a Project →</a>
+          <a href="#cta" class="btn-ghost">Book a Demo</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-topbar">
+          <div class="card-dots"><span></span><span></span><span></span></div>
+          <span class="card-title-bar">veselylab / physical-intelligence-layer</span>
+        </div>
+        <div class="card-body">
+          <div class="card-id-row">
+            <div>
+              <div class="card-id-label">NFC Identity Layer</div>
+              <div class="card-id-value">0x4F2A8D...B91E &nbsp;·&nbsp; OBJECT_ID_001</div>
+            </div>
+            <div class="card-status-dot"></div>
+          </div>
+          <div class="card-rows">
+            <div class="card-row">
+              <span class="card-row-label">AI Agent</span>
+              <span class="card-row-value ok">LINKED ✓</span>
+            </div>
+            <div class="card-row">
+              <span class="card-row-label">On-Chain Provenance</span>
+              <span class="card-row-value ok">VERIFIED ✓</span>
+            </div>
+            <div class="card-row">
+              <span class="card-row-label">Ownership Record</span>
+              <span class="card-row-value">veselylab_prod_v1</span>
+            </div>
+            <div class="card-row">
+              <span class="card-row-label">Device Status</span>
+              <span class="card-row-value ok">ACTIVE</span>
+            </div>
+            <div class="card-row">
+              <span class="card-row-label">Last Interaction</span>
+              <span class="card-row-value">NFC Tap · 2s ago</span>
+            </div>
+          </div>
+          <div class="card-flow">
+            <div class="flow-node active">Tap</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node active">NFC Read</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node active">Identity</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node">AI Logic</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node">Action</div>
+          </div>
+          <div class="card-pills">
+            <span class="pill">NFC Enabled</span>
+            <span class="pill">AI Routed</span>
+            <span class="pill">On-Chain</span>
+            <span class="pill">Automated</span>
+            <span class="pill">Phygital</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="container">
+    <div class="tech-header">
+      <span class="eyebrow">Core Technology</span>
+      <h2>Built on the Stack That Connects Bits to Atoms</h2>
+      <p>AI, NFC, custom hardware, automation, and programmable ownership combined into one physical intelligence layer.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <span class="tech-icon">🤖</span>
+        <div class="tech-label">AI Agents</div>
+        <div class="tech-sub">Context-aware logic</div>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">📡</span>
+        <div class="tech-label">NFC</div>
+        <div class="tech-sub">Tap-triggered actions</div>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">⚙️</span>
+        <div class="tech-label">Custom Hardware</div>
+        <div class="tech-sub">Form factor design</div>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">⛓</span>
+        <div class="tech-label">On-Chain Records</div>
+        <div class="tech-sub">Provenance &amp; ownership</div>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">⚡</span>
+        <div class="tech-label">Automation</div>
+        <div class="tech-sub">Connected workflows</div>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">🪪</span>
+        <div class="tech-label">Product Identity</div>
+        <div class="tech-sub">Machine-readable ID</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="system">
+  <div class="container">
+    <div class="system-header">
+      <span class="eyebrow">System Design</span>
+      <h2>Build Physical Intelligence Systems Visually</h2>
+      <p>Connect identity, automation, AI logic, and physical products into one deployable system.</p>
+    </div>
+    <div class="system-visual">
+      <div class="flow-diagram">
+        <div class="fd-node active">
+          <span class="fd-icon">📱</span>
+          <span class="fd-label">Product<br>Scan</span>
+        </div>
+        <span class="fd-arrow">→</span>
+        <div class="fd-node active">
+          <span class="fd-icon">📡</span>
+          <span class="fd-label">NFC<br>Read</span>
+        </div>
+        <span class="fd-arrow">→</span>
+        <div class="fd-node active">
+          <span class="fd-icon">🪪</span>
+          <span class="fd-label">Identity<br>Lookup</span>
+        </div>
+        <span class="fd-arrow">→</span>
+        <div class="fd-node">
+          <span class="fd-icon">🤖</span>
+          <span class="fd-label">AI<br>Decision</span>
+        </div>
+        <span class="fd-arrow">→</span>
+        <div class="fd-node">
+          <span class="fd-icon">⛓</span>
+          <span class="fd-label">Provenance<br>Check</span>
+        </div>
+        <span class="fd-arrow">→</span>
+        <div class="fd-node">
+          <span class="fd-icon">⚡</span>
+          <span class="fd-label">Trigger<br>Workflow</span>
+        </div>
+        <span class="fd-arrow">→</span>
+        <div class="fd-node">
+          <span class="fd-icon">✅</span>
+          <span class="fd-label">User<br>Response</span>
+        </div>
+      </div>
+    </div>
+    <div class="system-tags">
+      <span class="sys-tag">Identity Layer</span>
+      <span class="sys-tag">NFC Actions</span>
+      <span class="sys-tag">AI Logic</span>
+      <span class="sys-tag">Ownership Records</span>
+      <span class="sys-tag">Hardware Integrations</span>
+      <span class="sys-tag">Automation Flows</span>
+      <span class="sys-tag">On-Chain Verification</span>
+      <span class="sys-tag">Product Metadata</span>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Capabilities</span>
+      <h2>Infrastructure for Smart Physical Products</h2>
+      <p>Build physical products that can identify themselves, trigger workflows, prove provenance, and connect to AI-native systems.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🪪</div>
+        <h3>Digital Identity for Objects</h3>
+        <p>Give physical products unique, machine-readable identity linked to metadata, ownership, and lifecycle state. Every object gets a persistent digital twin.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📡</div>
+        <h3>NFC-Enabled Interactions</h3>
+        <p>Trigger authentication, onboarding, service flows, content, and actions with a simple tap. No app required — works natively on every modern smartphone.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Linked Devices and Products</h3>
+        <p>Connect objects to AI agents that can interpret context, answer questions, route actions, and personalize experiences based on who, where, and how an object is used.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⛓</div>
+        <h3>Provenance and Ownership Layer</h3>
+        <p>Attach crypto-backed or on-chain records to products for proof, traceability, and programmable ownership. From luxury goods to industrial assets.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <h3>Custom Hardware Prototyping</h3>
+        <p>Design and manufacture custom physical form factors — NFC-embedded objects, branded hardware, sensor housings, and connected enclosures built for your system.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Phygital Product Systems</h3>
+        <p>Full-stack phygital architectures that bridge physical objects to digital platforms, automation pipelines, ownership infrastructure, and AI workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usecases">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Use Cases</span>
+      <h2>From Objects to Systems</h2>
+      <p>Physical products reimagined as intelligent, connected, and programmable interfaces.</p>
+    </div>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <span class="usecase-num">01 ·</span>
+        <h3>Authenticated Products</h3>
+        <p>Physical goods with identity, provenance, and instant verification. Counterfeit-proof. Tap to verify ownership and history.</p>
+      </div>
+      <div class="usecase-card">
+        <span class="usecase-num">02 ·</span>
+        <h3>Connected Collectibles</h3>
+        <p>Objects linked to digital experiences, ownership records, and evolving utility. Physical assets with programmable digital layers.</p>
+      </div>
+      <div class="usecase-card">
+        <span class="usecase-num">03 ·</span>
+        <h3>Smart Packaging</h3>
+        <p>Packaging that launches onboarding flows, product support, personalized offers, or AI-powered product intelligence on tap.</p>
+      </div>
+      <div class="usecase-card">
+        <span class="usecase-num">04 ·</span>
+        <h3>Access &amp; Membership Objects</h3>
+        <p>Cards, tags, or devices that unlock services, communities, and permissions. Physical keys for digital infrastructure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="why-header">
+      <span class="eyebrow">Why VeselyLAB</span>
+      <h2>Not a Print Shop.<br>A Physical Intelligence Lab.</h2>
+      <p class="why-subhead">VeselyLAB does not sell commodity manufacturing. It designs connected physical products and systems where hardware, identity, automation, and AI work together from day one.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-num">01</span>
+        <h3>Strategy</h3>
+        <p>Define the product logic, identity model, and user interaction layer. Map physical touchpoints to digital systems and AI workflows before anything is built.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-num">02</span>
+        <h3>Prototyping</h3>
+        <p>Create custom physical form factors, NFC-enabled objects, and hardware concepts. Rapid iteration from concept to functional prototype.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-num">03</span>
+        <h3>Deployment</h3>
+        <p>Launch production-ready phygital systems connected to software, AI agents, and ownership infrastructure. From prototype to deployable product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, Answered Clearly</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What does VeselyLAB build?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>VeselyLAB designs smart physical products and phygital systems that combine AI, NFC, digital identity, custom hardware, and ownership infrastructure.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Is this just 3D printing?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>No. 3D printing is only one manufacturing method we use. The real product is the intelligence layer attached to the object — identity, AI connectivity, provenance, and automation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What kinds of products can you create?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Examples include NFC-enabled objects, authenticated products, connected packaging, custom hardware, membership objects, AI-linked devices, and industrial asset tags.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Can products be linked to blockchain or crypto records?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes. VeselyLAB can connect products to on-chain or crypto-backed provenance, ownership, and verification systems where useful. This is a capability, not a requirement.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Do you work on prototypes or production systems?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Both. Projects can start as single prototypes and evolve into fully deployable product systems. VeselyLAB supports the full journey from concept to production.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Can these products connect to AI agents?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes. Physical objects can trigger or interact with AI workflows, support systems, identity checks, and automation layers — turning every tap or scan into an intelligent interaction.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Who is this for?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Brands, operators, creators, and companies building connected physical products, intelligent packaging, authenticated goods, or phygital experiences.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          How is VeselyLAB related to vesely.ai?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>vesely.ai builds the digital workforce. VeselyLAB connects intelligence to the physical world. Same ecosystem — one side automates work, the other gives intelligence a physical body.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <span class="eyebrow">Start Building</span>
+    <h2>Bring Intelligence<br>Into the Physical World</h2>
+    <p>From NFC-enabled objects to AI-linked devices and programmable ownership systems, VeselyLAB helps turn physical products into intelligent interfaces.</p>
+    <div class="cta-btns">
+      <a href="mailto:hello@veselylab.com" class="btn-primary">Start a Project →</a>
+      <a href="mailto:hello@veselylab.com" class="btn-ghost">Talk to Us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">veselyLAB<span>.</span></div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="mailto:hello@veselylab.com">Contact</a>
+      <a href="https://github.com/veselylab" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://vesely.ai" target="_blank" rel="noopener">vesely.ai →</a>
+    </div>
+    <span class="footer-copy">© 2025 VeselyLAB. All rights reserved.</span>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
